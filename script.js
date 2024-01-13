@@ -5,6 +5,7 @@ const scoreDiv = document.querySelector("#right span");
 const selectionScreen = document.querySelector("#top");
 const playingScreen = document.querySelector("#second-page");
 const scoreScreen = document.querySelector("#third-page");
+// const blankBoxImg = document.querySelector("#second-page .main-box");
 const blankBoxImg = document.querySelector("#blank-box-img");
 const finalScoreDiv = document.querySelector("#third-page h3 span")
 
@@ -32,7 +33,17 @@ selectCharacter.forEach((char) => {
 startGame.addEventListener("click", () => {
     selectionScreen.style.display = "none"
     playingScreen.style.display = "flex"
-
+    // let elem = document.querySelector("#blank-box-img");
+    // console.log(elem)    
+    // let rect = elem.getBoundingClientRect();
+    // console.log("rect",rect);
+    // for (const key in rect) {
+    //   if (typeof rect[key] !== "function") {
+    //     let para = document.createElement("p");
+    //     para.textContent = `${key} : ${rect[key]}`;
+    //     console.log((para));
+    //   }
+    // }
 
 
     const interval = setInterval(() => {
@@ -63,6 +74,28 @@ startGame.addEventListener("click", () => {
 
 
 function randomPosition(elem) {
+       
+    // let rect = document.querySelector("#blank-box-img").getBoundingClientRect();
+    // console.log("rect",rect);
+    
+    // // const minx = rect.left -130;
+    // const minx = rect.left;
+    // // const maxx = rect.right -210;
+    // const maxx = rect.right;
+    
+    // // const miny = rect.top -50;
+    // const miny = rect.top;
+    // // const maxy = rect.bottom -90;
+    // const maxy = rect.bottom;
+
+    
+    // // console.log("position", y, x);
+    // const randomY = Math.random() * 1500;
+    // const randomX = Math.random() * 800;
+    // // const randomX = Math.random() * (maxx - minx) + minx;
+    // // const randomY = Math.random() * (maxy - miny) + miny;
+    // elem.style.top = randomY + "px";
+    // elem.style.left = randomX + "px";
     const y = blankBoxImg.clientHeight;
     const x = blankBoxImg.clientWidth;
     console.log("position", y, x);
@@ -70,6 +103,7 @@ function randomPosition(elem) {
     const randomX = Math.random() * x;
     elem.style.top = randomY + "px";
     elem.style.left = randomX + "px";
+    console.log("random hor, random ver",randomX,randomY)
 
 }
 
@@ -80,3 +114,9 @@ function removeImage(event) {
 function calculateScore() {
     finalScoreDiv.innerHTML = score;
 }
+
+
+
+
+
+

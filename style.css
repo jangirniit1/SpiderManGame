@@ -102,12 +102,10 @@ p {
     border-radius: 20px;
 }
 
-.blank-box-img {
-    position: relative;
-}
+
 
 .smallImg {
-    width: 100px;
+    width: 50px;
     position: absolute;
 }
 
@@ -139,6 +137,8 @@ p {
 #blank-box-img {
     height: 84vh;
     width: 90%;
+    position: relative;
+    overflow: hidden;
     border: 1px solid burlywood;
     box-shadow: 2px 2px 8px brown;
     z-index: 1;
